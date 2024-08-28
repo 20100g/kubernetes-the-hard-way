@@ -23,9 +23,9 @@ sed -e "/^.*$2.*/d" -i /etc/hosts
 
 # Update /etc/hosts about other hosts
 cat >> /etc/hosts <<EOF
-${NETWORK}.11  controlplane01
-${NETWORK}.12  controlplane02
-${NETWORK}.21  node01
-${NETWORK}.22  node02
-${NETWORK}.30  loadbalancer
+${NETWORK}.211  controlplane01
+${NETWORK}.212  controlplane02
+${NETWORK}.221  node01
+${NETWORK}.222  node02
+${NETWORK}.230  loadbalancer
 EOF

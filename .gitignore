@@ -2,6 +2,7 @@
 .vscode
 ubuntu-jammy*.log
 .vagrant
+.vagrant.d/
 temp
 *.crt
 *.key

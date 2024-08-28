@@ -15,20 +15,13 @@ This lab provisions 5 VMs on your workstation. That's a lot of compute resource!
 - 8 core or better CPU e.g. Intel Core-i7/Core-i9, AMD Ryzen-7/Ryzen-9. May work with fewer, but will be slow and may crash unexpectedly.
 - 50 GB disk space
 
-### VirtualBox
+### Hyper-V
 
-Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) on any one of the supported platforms:
-
- - Windows
- - Intel Mac
- - Linux
+Hyper-V must be enabled on the hosts
 
 ### Vagrant
 
-Once VirtualBox is installed you may chose to deploy virtual machines manually on it.
-Vagrant provides an easier way to deploy multiple virtual machines on VirtualBox more consistently.
-
-Download and install [Vagrant](https://www.vagrantup.com/) on your platform.
+Download and install [Vagrant](https://www.vagrantup.com/) on your platform (host and WSL2).
 
 - Windows
 - Debian/Ubuntu
@@ -36,8 +29,17 @@ Download and install [Vagrant](https://www.vagrantup.com/) on your platform.
 - Linux
 - Intel Mac
 
-This tutorial assumes that you have also installed Vagrant.
+This tutorial assumes that you have also installed Vagrant on the host and WSL.
 
+
+```bash
+# Install vagrant reload provisionner so changes made to use static IP are applied
+vagrant plugin install vagrant-reload
+
+echo 'export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"' >> ~/.bashrc
+echo 'export VAGRANT_DEFAULT_PROVIDER=hyperv >>' ~/.bashrc
+echo 'export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/d/work"' >> ~/.bashrc
+```
 
 ### Lab Defaults
 
@@ -52,7 +54,7 @@ If you do change any of these, **please consider that a personal preference and 
 
 #### Virtual Machine Network
 
-The network used by the VirtualBox virtual machines is `192.168.56.0/24`.
+The network used by the VirtualBox virtual machines is 10.0.0.0/24
 
 To change this, edit the [Vagrantfile](../../vagrant/Vagrantfile) in your cloned copy (do not edit directly in github), and set the new value for the network prefix at line 9. This should not overlap any of the other network settings.
 
