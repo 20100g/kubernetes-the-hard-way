@@ -1,0 +1,8 @@
+# from galaxy
+- name: geerlingguy.containerd
+- name: geerlingguy.kubernetes
+  src: https://github.com/20100g/ansible-role-kubernetes.git
+# from github
+# - name: githubixx.cilium_kubernetes
+#   src: https://github.com/githubixx/ansible-role-cilium-kubernetes.git
+#   version: 13.0.0+1.15.3

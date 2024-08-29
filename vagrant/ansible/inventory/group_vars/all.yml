@@ -1,0 +1,17 @@
+ansible_user: vagrant
+
+kubernetes_config_cluster_configuration:
+  networking:
+    podSubnet: "10.244.0.0/16"
+    serviceSubnet: "10.96.0.0/16"
+  controlPlaneEndpoint: "10.0.0.230:6443"
+
+kubernetes_version: "1.31"
+kubernetes_pod_network: 
+  cni: 'cilium'
+  cidr: 10.244.0.0/16
+
+kubernetes_cilium_values:
+  kubeProxyReplacement: false
+
+kubernetes_cilium_datapath: veth

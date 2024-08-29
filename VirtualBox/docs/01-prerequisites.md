@@ -37,8 +37,8 @@ This tutorial assumes that you have also installed Vagrant on the host and WSL.
 vagrant plugin install vagrant-reload
 
 echo 'export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"' >> ~/.bashrc
-echo 'export VAGRANT_DEFAULT_PROVIDER=hyperv >>' ~/.bashrc
-echo 'export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/d/work"' >> ~/.bashrc
+echo 'export VAGRANT_DEFAULT_PROVIDER=hyperv' >> ~/.bashrc
+echo 'export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/c/work"' >> ~/.bashrc
 ```
 
 ### Lab Defaults
